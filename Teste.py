@@ -54,12 +54,14 @@ class TestTriangle(unittest.TestCase):
     def test_no_number(self):
 
         browser.find_element(By.NAME, "V1").send_keys("a")
-        browser.find_element(By.NAME, "V2").send_keys("a")
-        browser.find_element(By.NAME, "V3").send_keys("a")
+        browser.find_element(By.NAME, "V2").send_keys("!")
+        browser.find_element(By.NAME, "V3").send_keys("!")
         browser.find_element(By.TAG_NAME, "input").submit()
         tipo_triagulo = browser.find_element(By.XPATH, "//div[4]")
-        self.assertNotEquals(tipo_triagulo.text, "Equilátero", "A Aplicação não identificou que valor inserido não é numero")
-
+        self.assertNotEqual(tipo_triagulo.text, "Escaleno", "A Aplicação não identificou que o valor inserido não é um número")
+        self.assertNotEqual(tipo_triagulo.text, "Equilátero", "A Aplicação não identificou que o valor inserido não é um número")
+        self.assertNotEqual(tipo_triagulo.text, "Isósceles", "A Aplicação não identificou que o valor inserido não é um número")
+        
 
     @classmethod
     def tearDownClass(cls):
