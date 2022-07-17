@@ -5,6 +5,7 @@ Funtional test file to application web that identifies triangle type and verify 
 ## Getting Started
 
 This project is a starting Python application using a selenium framework.
+
 Versions:
  - Python 3.10.5
  - Selenium 4.3.0
